@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="1000" height="640" role="img" aria-label="UML module diagram of both programs">
+<title>UML module diagram of both programs</title><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+<rect width="1000" height="640" fill="#ffffff"/>
+<rect x="20" y="20" width="460" height="428" rx="10" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<path d="M20,30 a10,10 0 0 1 10,-10 h440 a10,10 0 0 1 10,10 v34 h-460 z" fill="#1e3a8a"/>
+<text x="250" y="38.9" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#c7d2fe" text-anchor="middle">«module»</text>
+<text x="250" y="56.2" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">student_scholarship_system.py</text>
+<line x1="20" y1="64" x2="480" y2="64" stroke="#334155" stroke-width="2"/>
+<text x="34" y="81.8" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#475569" text-anchor="start">Constants   (imports math)</text>
+<text x="40" y="102.4" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="400" fill="#0f172a" text-anchor="start">MIN_MARKS = 80</text>
+<text x="40" y="122.4" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="400" fill="#0f172a" text-anchor="start">FULL_SCHOLARSHIP_MARKS = 90</text>
+<text x="40" y="142.4" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="400" fill="#0f172a" text-anchor="start">MIN_ATTENDANCE = 85</text>
+<text x="40" y="162.4" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="400" fill="#0f172a" text-anchor="start">MAX_INCOME = 50000</text>
+<text x="40" y="182.4" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="400" fill="#0f172a" text-anchor="start">PERCENT_MIN, PERCENT_MAX = 0, 100</text>
+<line x1="20" y1="198" x2="480" y2="198" stroke="#334155" stroke-width="2"/>
+<text x="34" y="213.8" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#475569" text-anchor="start">Functions   (dashed arrows = «calls»)</text>
+<rect x="60" y="224" width="380" height="32" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+<text x="250" y="243.6" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="10.3" font-weight="500" fill="#0f172a" text-anchor="middle">main()</text>
+<rect x="60" y="268" width="380" height="32" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="250" y="287.6" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="10.3" font-weight="500" fill="#0f172a" text-anchor="middle">read_name(prompt)</text>
+<rect x="60" y="312" width="380" height="32" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="250" y="331.6" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="10.3" font-weight="500" fill="#0f172a" text-anchor="middle">read_number(prompt, minimum, maximum=None)</text>
+<rect x="60" y="356" width="380" height="32" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="250" y="375.6" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="10.3" font-weight="500" fill="#0f172a" text-anchor="middle">evaluate_eligibility(marks, attendance, income)</text>
+<rect x="60" y="400" width="380" height="32" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="250" y="419.6" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="10.3" font-weight="500" fill="#0f172a" text-anchor="middle">display_result(name, eligible, scholarship_type, reasons)</text>
+<polyline points="60,240 40,240 40,284 60,284" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<polyline points="60,240 40,240 40,328 60,328" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<polyline points="60,240 40,240 40,372 60,372" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<polyline points="60,240 40,240 40,416 60,416" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<rect x="520" y="20" width="460" height="436" rx="10" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+<path d="M520,30 a10,10 0 0 1 10,-10 h440 a10,10 0 0 1 10,10 v34 h-460 z" fill="#1e3a8a"/>
+<text x="750" y="38.9" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#c7d2fe" text-anchor="middle">«module»</text>
+<text x="750" y="56.2" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">pharmacy_inventory_system.py</text>
+<line x1="520" y1="64" x2="980" y2="64" stroke="#334155" stroke-width="2"/>
+<text x="534" y="81.8" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#475569" text-anchor="start">Constants   (imports math)</text>
+<text x="540" y="102.4" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="12.5" font-weight="400" fill="#0f172a" text-anchor="start">LOW_STOCK_LIMIT = 10</text>
+<line x1="520" y1="118" x2="980" y2="118" stroke="#334155" stroke-width="2"/>
+<text x="534" y="133.8" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#475569" text-anchor="start">Functions   (dashed arrows = «calls»)</text>
+<rect x="560" y="144" width="380" height="32" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+<text x="750" y="163.6" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="10.3" font-weight="500" fill="#0f172a" text-anchor="middle">main()</text>
+<rect x="560" y="188" width="380" height="32" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="750" y="207.6" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="10.3" font-weight="500" fill="#0f172a" text-anchor="middle">read_medicine(number)</text>
+<rect x="560" y="232" width="380" height="32" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="750" y="251.6" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="10.3" font-weight="500" fill="#0f172a" text-anchor="middle">read_text(prompt)</text>
+<rect x="560" y="276" width="380" height="32" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="750" y="295.6" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="10.3" font-weight="500" fill="#0f172a" text-anchor="middle">read_int(prompt, minimum)</text>
+<rect x="560" y="320" width="380" height="32" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="750" y="339.6" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="10.3" font-weight="500" fill="#0f172a" text-anchor="middle">read_price(prompt)</text>
+<rect x="560" y="364" width="380" height="32" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="750" y="383.6" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="10.3" font-weight="500" fill="#0f172a" text-anchor="middle">process_sale(stock, price, quantity)</text>
+<rect x="560" y="408" width="380" height="32" rx="7" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="750" y="427.6" font-family="Consolas, Menlo, DejaVu Sans Mono, monospace" font-size="10.3" font-weight="500" fill="#0f172a" text-anchor="middle">is_low_stock(remaining_stock)</text>
+<polyline points="560,160 540,160 540,204 560,204" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<polyline points="560,160 540,160 540,292 560,292" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<polyline points="560,160 540,160 540,380 560,380" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<polyline points="560,160 540,160 540,424 560,424" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<polyline points="940,204 960,204 960,248 940,248" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<polyline points="940,204 960,204 960,292 940,292" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<polyline points="940,204 960,204 960,336 940,336" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+<rect x="30" y="490" width="18" height="14" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="56" y="501.2" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155" text-anchor="start">Input</text>
+<rect x="30" y="512" width="18" height="14" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="56" y="523.2" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155" text-anchor="start">Decision / loop</text>
+<rect x="30" y="534" width="18" height="14" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="56" y="545.2" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155" text-anchor="start">Success</text>
+<rect x="30" y="556" width="18" height="14" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+<text x="56" y="567.2" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155" text-anchor="start">Error / rejection</text>
+<rect x="30" y="578" width="18" height="14" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+<text x="56" y="589.2" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155" text-anchor="start">Warning</text>
+<rect x="30" y="600" width="18" height="14" rx="4" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+<text x="56" y="611.2" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155" text-anchor="start">Process</text>
+<text x="200" y="505.2" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#334155" text-anchor="start">Dashed arrow = «calls»: the function at the arrow tail calls the function at the head</text>
+</svg>

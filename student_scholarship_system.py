@@ -1,69 +1,96 @@
-# Student Scholarship Eligibility System
-# This program checks scholarship eligibility using marks, attendance, and family income.
+"""Student Scholarship Eligibility System.
 
-def get_number(prompt, minimum, maximum=None):
-    """Get a valid numeric value from the user."""
+Evaluates a student's scholarship eligibility from academic marks,
+attendance and monthly family income.
+"""
+
+import math
+
+# ---- Eligibility rules (constants instead of magic numbers) ----
+MIN_MARKS = 80            # minimum academic marks (%) to be eligible
+FULL_SCHOLARSHIP_MARKS = 90  # marks (%) at or above which the award is Full
+MIN_ATTENDANCE = 85       # minimum attendance (%)
+MAX_INCOME = 50000        # maximum monthly family income (Rs.)
+PERCENT_MIN, PERCENT_MAX = 0, 100
+
+
+def read_name(prompt):
+    """Ask for a name until a non-empty, letters-and-spaces value is given."""
     while True:
+        name = input(prompt).strip()
+        if not name:
+            print("Error: Name cannot be empty. Please try again.")
+        elif not name.replace(" ", "").isalpha():
+            print("Error: Name must contain letters and spaces only.")
+        else:
+            return name
+
+
+def read_number(prompt, minimum, maximum=None):
+    """Ask for a number in [minimum, maximum] until a valid value is given."""
+    while True:
+        text = input(prompt).strip()
         try:
-            value = float(input(prompt))
-            if value < minimum or (maximum is not None and value > maximum):
-                if maximum is None:
-                    print(f"Please enter a value of at least {minimum}.")
-                else:
-                    print(f"Please enter a value between {minimum} and {maximum}.")
-                continue
-            return value
+            value = float(text)
         except ValueError:
-            print("Invalid input. Please enter a number.")
+            print("Error: Please enter a valid number.")
+            continue
+        if not math.isfinite(value):
+            print("Error: Please enter a valid number.")
+        elif value < minimum or (maximum is not None and value > maximum):
+            if maximum is None:
+                print(f"Error: Value must be at least {minimum}.")
+            else:
+                print(f"Error: Value must be between {minimum} and {maximum}.")
+        else:
+            return value
 
 
-print("\n=== STUDENT SCHOLARSHIP ELIGIBILITY SYSTEM ===")
+def evaluate_eligibility(marks, attendance, income):
+    """Return (eligible, scholarship_type, reasons) for the given values."""
+    reasons = []
+    if marks < MIN_MARKS:
+        reasons.append(f"Academic marks below {MIN_MARKS}% (got {marks:g}%)")
+    if attendance < MIN_ATTENDANCE:
+        reasons.append(f"Attendance below {MIN_ATTENDANCE}% (got {attendance:g}%)")
+    if income > MAX_INCOME:
+        reasons.append(f"Monthly family income above Rs. {MAX_INCOME:,} (got Rs. {income:,.0f})")
 
-# Collect and validate student information.
-while True:
-    student_name = input("Enter student name: ").strip()
-    if student_name:
-        break
-    print("Name cannot be empty.")
+    if reasons:                                  # at least one rule failed
+        return False, "None", reasons
+    elif marks >= FULL_SCHOLARSHIP_MARKS:        # all rules met, top marks
+        return True, "Full Scholarship", reasons
+    else:                                        # all rules met, marks 80 to <90
+        return True, "Partial Scholarship", reasons
 
-marks = get_number("Enter academic marks (0-100): ", 0, 100)
-attendance = get_number("Enter attendance percentage (0-100): ", 0, 100)
-family_income = get_number("Enter monthly family income (Rs.): ", 0)
 
-# Check each eligibility condition and record any reasons for ineligibility.
-reasons = []
-
-if marks < 80:
-    reasons.append("Academic marks are below 80%.")
-if attendance < 85:
-    reasons.append("Attendance is below 85%.")
-if family_income > 50000:
-    reasons.append("Monthly family income is above Rs. 50,000.")
-
-# Decide the scholarship category.
-if not reasons:
-    if marks >= 90:
-        scholarship_status = "Eligible"
-        scholarship_type = "Full Scholarship"
+def display_result(name, eligible, scholarship_type, reasons):
+    """Print the final decision."""
+    print("\n--- Scholarship Result ---")
+    print(f"Student Name: {name}")
+    if eligible:
+        print("Scholarship Status: Eligible")
+        print(f"Scholarship Type: {scholarship_type}")
     else:
-        scholarship_status = "Eligible"
-        scholarship_type = "Partial Scholarship"
-else:
-    scholarship_status = "Not Eligible"
-    scholarship_type = "No Scholarship"
+        print("Scholarship Status: Not Eligible")
+        print("Reason(s):")
+        for reason in reasons:
+            print(f"  - {reason}")
 
-# Display the complete evaluation report.
-print("\n========== SCHOLARSHIP EVALUATION REPORT ==========")
-print(f"Student Name: {student_name}")
-print(f"Academic Marks: {marks:.2f}%")
-print(f"Attendance: {attendance:.2f}%")
-print(f"Monthly Family Income: Rs. {family_income:,.2f}")
-print(f"Scholarship Status: {scholarship_status}")
-print(f"Scholarship Type: {scholarship_type}")
 
-if reasons:
-    print("Reasons for Ineligibility:")
-    for reason in reasons:
-        print(f"- {reason}")
+def main():
+    print("=== Student Scholarship Eligibility System ===")
+    try:
+        name = read_name("Enter student name: ")
+        marks = read_number("Enter academic marks (0-100): ", PERCENT_MIN, PERCENT_MAX)
+        attendance = read_number("Enter attendance percentage (0-100): ", PERCENT_MIN, PERCENT_MAX)
+        income = read_number("Enter monthly family income (Rs.): ", 0)
+    except EOFError:
+        print("\nError: Input ended before all values were entered.")
+        return
+    eligible, scholarship_type, reasons = evaluate_eligibility(marks, attendance, income)
+    display_result(name, eligible, scholarship_type, reasons)
 
-print("===================================================")
+
+if __name__ == "__main__":
+    main()
